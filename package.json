@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@actions/github": "^7.0.0"
+  }
+}
