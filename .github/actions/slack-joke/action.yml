@@ -29,8 +29,9 @@ runs:
     - name: Generate JokeFile
       shell: bash 
       run: |
-        echo '${{steps.joke.outputs.random_joke}}' > joke.txt 
-      if: inputs.upload_joke
+        echo "${{ steps.joke.outputs.random_joke }}" > joke.txt
+        echo "${{ steps.joke.outputs.random_joke }}" > joke.txt 
+      if: ${{ inputs.upload_joke == 'true' }}
     - name: Upload Joke 
       uses: actions/upload-artifact@v4
       with:
