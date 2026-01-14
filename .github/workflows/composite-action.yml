@@ -1,0 +1,17 @@
+name: Composite actions 
+on: push
+jobs:
+    composite-action:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Simple Joker action
+              id: joker
+              uses: ./.github/actions/slack-joke 
+              with: 
+                slack_username: HPierre
+                upload_joke: true 
+                slack_webhook: ${{secrets.SLACK_WEBHOOK}}
+            - name: Displaying Joke output
+              run: |
+                echo '${{steps.joker.outputs.joke-hp}}'
