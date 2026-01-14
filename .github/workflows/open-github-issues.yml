@@ -13,7 +13,7 @@ jobs:
         steps:
             - uses: actions/checkout@v6
             - run: npm ci
-            - run: npm test
+            - run: npx jest --coverage
     test-smoth:
         runs-on: ubuntu-latest
         steps:
