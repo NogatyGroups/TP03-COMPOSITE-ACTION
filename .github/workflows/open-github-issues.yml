@@ -19,9 +19,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v6
-            - run: ls -la *
-            - run: ls -la .github/actions/slack-joke/action.yml
-            - uses: NogatyGroups/TP03-COMPOSITE-ACTION/.github/actions/slack-joke/@main
+            - uses: ./
               id: issue
               with:
                 token: ${{secrets.GITHUB_TOKEN}}

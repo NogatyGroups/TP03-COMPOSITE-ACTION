@@ -1,0 +1,21 @@
+name: Open Github Issues Action
+description: "Open Github Issues Action"
+author: "HPierre"
+inputs:
+    token: 
+        description: "Github Token"
+        required: true
+    title:
+        description: "Issue Title"
+        required: true 
+    body:
+        description: "Issue Body"
+        required: true
+    assignees:
+        description: "Issue Assignees"
+outputs:
+    issue:
+        description: "The issue object as a JSON string"
+runs:
+    using: "node24"
+    main: "dist/index.js"
